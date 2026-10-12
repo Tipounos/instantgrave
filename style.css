@@ -191,13 +191,9 @@ input:focus-visible {
   font-size: var(--fs-small);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-gold-light);
+  color: var(--color-gold);
   font-weight: 600;
   margin-bottom: var(--space-xs);
-}
-
-.eyebrow--on-dark {
-  color: var(--color-gold-light);
 }
 
 .section__title {
