@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nos prestations — MV Événement | Décoration événementielle à Gignac-la-Nerthe</title>
+    <meta name="description" content="Découvrez les prestations de MV Événement : décoration de mariages, anniversaires, baby showers, gender reveals et baptêmes. Choisissez votre prestation et laissez-vous inspirer." />
+    <meta name="theme-color" content="#2a1a20" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="site-header">
+      <div class="header__inner">
+        <a href="index.html" class="logo" aria-label="MV Événement, retour à l'accueil">
+          <img src="assets/images/logo.webp" alt="MV événements" />
+        </a>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+          <ul class="main-nav__list">
+            <li><a href="index.html" class="main-nav__link">Accueil</a></li>
+            <li><a href="prestations.html" class="main-nav__link" aria-current="page">Prestations</a></li>
+            <li><a href="about.html" class="main-nav__link">À propos</a></li>
+            <li><a href="contact.html" class="main-nav__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__actions">
+          <a href="devis.html" class="btn btn--gold btn--small header__cta">Réserver</a>
+          <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
+            <span class="burger__bar"></span>
+            <span class="burger__bar"></span>
+            <span class="burger__bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ============ HERO (même structure que la galerie du Petit Atelier) ============ -->
+      <section class="presta-hero">
+        <span class="presta-hero__label">MV Événement · Décoration</span>
+        <h1 class="presta-hero__title">Nos <em>prestations</em></h1>
+        <p class="presta-hero__sub">Choisissez une prestation et laissez-vous inspirer pour votre futur événement.</p>
+      </section>
+
+      <!-- ============ PRESTATIONS : UNE CARD PAR PRESTATION ============ -->
+      <section class="presta" aria-label="Nos prestations">
+        <div class="container">
+          <p class="presta__intro">
+            Chaque décoration est imaginée selon votre univers, vos envies et votre lieu.
+            Choisissez la prestation qui vous correspond, nous nous occupons de la décoration
+            et de l’installation.
+          </p>
+
+          <!-- Pour ajouter une prestation : copie un bloc <article>, change l'image, le titre et le texte -->
+          <div class="presta__grid">
+            <article class="presta-card reveal">
+              <div class="presta-card__image">
+                <img
+                  src="assets/images/prestation-mariage.webp"
+                  alt="Décoration de mariage MV Événement"
+                  loading="lazy"
+                  onerror="this.parentElement.classList.add('is-placeholder')"
+                />
+              </div>
+              <div class="presta-card__body">
+                <h2 class="presta-card__title">Mariage</h2>
+                <p class="presta-card__text">Arches, tables et ambiances élégantes pour sublimer votre grand jour.</p>
+                <a href="devis.html" class="presta-card__link">
+                  Demander un devis
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="presta-card reveal">
+              <div class="presta-card__image">
+                <img
+                  src="assets/images/prestation-anniversaire.webp"
+                  alt="Décoration d’anniversaire MV Événement"
+                  loading="lazy"
+                  onerror="this.parentElement.classList.add('is-placeholder')"
+                />
+              </div>
+              <div class="presta-card__body">
+                <h2 class="presta-card__title">Anniversaire</h2>
+                <p class="presta-card__text">Une scénographie imaginée selon votre univers, vos envies et l’ambiance souhaitée.</p>
+                <a href="devis.html" class="presta-card__link">
+                  Demander un devis
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="presta-card reveal">
+              <div class="presta-card__image">
+                <img
+                  src="assets/images/prestation-babyshower.webp"
+                  alt="Décoration de baby shower et gender reveal MV Événement"
+                  loading="lazy"
+                  onerror="this.parentElement.classList.add('is-placeholder')"
+                />
+              </div>
+              <div class="presta-card__body">
+                <h2 class="presta-card__title">Baby shower / Gender reveal</h2>
+                <p class="presta-card__text">Un univers doux et harmonieux pour célébrer l’arrivée de bébé.</p>
+                <a href="devis.html" class="presta-card__link">
+                  Demander un devis
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="presta-card reveal">
+              <div class="presta-card__image">
+                <img
+                  src="assets/images/prestation-pro.webp"
+                  alt="Décoration de baptême MV Événement"
+                  loading="lazy"
+                  onerror="this.parentElement.classList.add('is-placeholder')"
+                />
+              </div>
+              <div class="presta-card__body">
+                <h2 class="presta-card__title">Baptêmes</h2>
+                <p class="presta-card__text">Une décoration pleine de délicatesse pour célébrer votre baptême.</p>
+                <a href="devis.html" class="presta-card__link">
+                  Demander un devis
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <span class="logo__main">MV</span>
+          <span class="logo__sub">Événement</span>
+        </div>
+        <p class="site-footer__tagline">Organisation et décoration événementielle sur mesure, avec élégance et attention aux détails</p>
+        <div class="site-footer__socials">
+          <a href="https://www.instagram.com/mv_evenement/" target="_blank" rel="noopener noreferrer" aria-label="Instagram MV Événement">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.42.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.42.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45.53C6.09.28 6.82.11 7.88.06 8.94.01 9.3 0 12 0zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+          </a>
+          <a href="https://wa.me/33652282930" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp MV Événement">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.696 4.607 1.897 6.475L4 29l7.72-1.86A11.94 11.94 0 0 0 16 27c6.628 0 12-5.373 12-12S22.629 3 16.001 3z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+        </div>
+        <p class="site-footer__copy">© <span id="current-year">2026</span> MV Événement. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/33652282930" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contacter MV Événement sur WhatsApp">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.696 4.607 1.897 6.475L4 29l7.72-1.86A11.94 11.94 0 0 0 16 27c6.628 0 12-5.373 12-12S22.629 3 16.001 3zm0 21.8a9.76 9.76 0 0 1-4.98-1.363l-.357-.213-4.583 1.104 1.223-4.47-.232-.367A9.76 9.76 0 0 1 6.2 15c0-5.404 4.397-9.8 9.801-9.8 5.403 0 9.8 4.396 9.8 9.8 0 5.404-4.397 9.8-9.8 9.8zm5.377-7.34c-.294-.147-1.74-.859-2.01-.957-.27-.098-.466-.147-.663.147-.196.294-.76.957-.933 1.153-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.779-1.463-1.74-1.635-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.441-.514.147-.172.196-.294.294-.49.098-.196.049-.367-.024-.514-.073-.147-.663-1.597-.909-2.187-.239-.574-.482-.497-.663-.506l-.564-.01c-.196 0-.514.073-.784.367-.27.294-1.03 1.006-1.03 2.455 0 1.448 1.055 2.848 1.202 3.044.147.196 2.076 3.17 5.032 4.444.703.303 1.251.484 1.679.62.705.224 1.347.192 1.854.117.566-.084 1.74-.712 1.985-1.4.245-.69.245-1.28.172-1.4-.073-.122-.269-.196-.563-.343z"/></svg>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
