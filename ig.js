@@ -26,18 +26,12 @@ const PRESTATIONS = [
     text: "Dissimule l'arrière-plan et met davantage en valeur vos photos." },
   { slug: 'enclos', title: 'Enclos', price: 'À partir de 80 €', cutout: true,
     text: "Dissimule l'arrière-plan et met davantage en valeur vos vidéos." },
-  { slug: 'photo-porte-cles', title: 'Photo porte-clé', price: 'À partir de 100 unités',
-    text: 'Vos invités repartent avec un souvenir personnalisé.' },
   { slug: 'granita', title: 'Granita', price: 'À partir de 250 €', cutout: true,
     text: 'Des granités colorés et rafraîchissants pour le bonheur des enfants comme des adultes.' },
   { slug: 'gaufres', title: 'Gaufres', price: 'À partir de 250 €', cutout: true,
     text: 'Une note chaleureuse et gourmande, avec sucre, Nutella, caramel et toppings.' },
-  { slug: 'pancakes', title: 'Pancakes', price: 'À partir de 250 €',
-    text: 'Des pancakes moelleux accompagnés de toppings gourmands, pour un moment aussi chaleureux que délicieux.' },
   { slug: 'barbe-a-papa', title: 'Barbe à papa', price: 'À partir de 250 €', cutout: true,
-    text: 'Symbole incontournable des fêtes, elle séduit toutes les générations.' },
-  { slug: 'popcorn', title: 'Popcorn', price: 'À partir de 250 €',
-    text: 'Une note savoureuse et festive grâce à notre machine à popcorn professionnelle.' },
+    text: 'Symbole incontournable des fêtes, elle séduit toutes les générations.' }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
