@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="theme-instantgrave.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/grab-n-drag-infinite-carousel@latest/dist/grab-n-drag-infinite-carousel.min.css">
   </head>
   <body>
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
@@ -45,7 +46,7 @@
             <li>
               <a href="#approche" class="main-nav__link">Qui sommes-nous</a>
             </li>
-            <li><a href="#contact" class="main-nav__link">Contact</a></li>
+            <li><a href="contact.html" class="main-nav__link">Contact</a></li>
           </ul>
         </nav>
 
@@ -514,7 +515,23 @@
           </div>
         </div>
       </section> -->
-
+      <div class="infinite-scroll-wrapper">
+          <div class="infinite-scroll-container" id="carousel-logos">
+              <div class="infinite-scroll-item image-item">
+                  <img src="assets/images/logos/amazon.webp" alt="Amazon">
+              </div>
+              <div class="infinite-scroll-item image-item">
+                  <img src="assets/images/logos/cutera_france.webp" alt="Cutera France">
+              </div>
+              <div class="infinite-scroll-item image-item"><img src="assets/images/logos/episol_du_bourget.webp" alt="Episol du Bourget"></div>
+              <div class="infinite-scroll-item image-item"><img src="assets/images/logos/idverde.webp" alt="Idverde"></div>
+              <div class="infinite-scroll-item image-item"><img src="assets/images/logos/le_bourget.webp" alt="Ville du Bourget"></div>
+              <div class="infinite-scroll-item image-item"><img src="assets/images/logos/primark.webp" alt="Primark"></div>
+              <div class="infinite-scroll-item image-item"><img src="assets/images/logos/saint_ouen.webp" alt="Ville de Saint-Ouen"></div>
+              <div class="infinite-scroll-item image-item"><img src="assets/images/logos/sport_dans_la_ville.webp" alt="Sport dans la ville"></div>
+              <!-- More items... -->
+          </div>
+      </div>
       <!-- ============ GALERIE ============ -->
       <section class="section gallery" id="galerie">
         <div class="container">
@@ -695,6 +712,7 @@
     </a>
 
     <!-- ig.js doit être chargé AVANT script.js (il crée les cartes que le carrousel utilise) -->
+     <script src="https://cdn.jsdelivr.net/npm/grab-n-drag-infinite-carousel@latest/dist/grab-n-drag-infinite-carousel.min.js"></script>
     <script src="ig.js"></script>
     <script src="script.js"></script>
   </body>

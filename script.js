@@ -238,6 +238,12 @@ function initScrollReveal() {
   targets.forEach((el) => observer.observe(el));
 }
 
+const carouselLogos = new InfiniteScrollCarousel('#carousel-logos', {
+    speed: 40,
+    pauseOnHover: true,
+    fadeColor: '#fff'
+});
+
 /* ==========================================================================
    PAGE PRESTATIONS — filtrage des photos par prestation
    À charger APRÈS script.js
