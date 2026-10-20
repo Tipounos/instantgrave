@@ -3047,3 +3047,7 @@ ol.process {
     object-fit: cover;
     display: block;
 }
+
+.infinite-scroll-wrapper {
+  margin-top: var(--space-lg);
+}
