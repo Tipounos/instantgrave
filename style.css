@@ -276,6 +276,7 @@ input:focus-visible {
   background: var(--color-ink);
   color: var(--color-cream);
   box-shadow: var(--shadow-soft);
+    border: 1px solid hsla(0, 0%, 100%, 0.24);
 }
 
 .btn--gold:hover {
@@ -1243,7 +1244,9 @@ input:focus-visible {
    CONTACT
    ========================================================================== */
 
-.contact {
+.contact,
+.approach,
+.instagram {
   background: var(--color-ink);
   text-align: center;
 }
