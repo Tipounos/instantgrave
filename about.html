@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À propos — Instant Gravé Event | Photobooth, vidéobooth et animations en Île-de-France</title>
+    <meta
+      name="description"
+      content="Découvrez Instant Gravé Event : photobooth, vidéobooth, livres d'or et animations gourmandes pour graver vos plus beaux moments, en Île-de-France."
+    />
+    <meta name="theme-color" content="#15100a" />
+
+    <!-- Open Graph (ajoute og:image et og:url une fois le nom de domaine connu) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Instant Gravé Event" />
+    <meta property="og:title" content="À propos — Instant Gravé Event" />
+    <meta
+      property="og:description"
+      content="Des animations photo, vidéo et gourmandes pour que vos événements restent gravés dans les mémoires."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="site-header">
+      <div class="header__inner">
+        <a
+          href="index.html"
+          class="logo"
+          aria-label="Instant Gravé Event, retour à l'accueil"
+        >
+          <img src="assets/images/logo.webp" alt="Instant Gravé Event" />
+        </a>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+          <ul class="main-nav__list">
+            <li><a href="index.html" class="main-nav__link">Accueil</a></li>
+            <li>
+              <a href="prestations.html" class="main-nav__link">Prestations</a>
+            </li>
+            <li>
+              <a href="about.html" class="main-nav__link" aria-current="page">À propos</a>
+            </li>
+            <li>
+              <a href="contact.html" class="main-nav__link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__actions">
+          <a href="devis.html" class="btn btn--gold btn--small header__cta"
+            >Réserver</a
+          >
+
+          <button
+            type="button"
+            class="burger"
+            id="burger"
+            aria-expanded="false"
+            aria-controls="main-nav"
+            aria-label="Ouvrir le menu"
+          >
+            <span class="burger__bar"></span>
+            <span class="burger__bar"></span>
+            <span class="burger__bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ============ HERO ============ -->
+      <section class="hero hero--page">
+        <img
+          class="hero__image"
+          src="assets/images/about-hero.webp"
+          alt=""
+          fetchpriority="high"
+          decoding="async"
+          onerror="this.style.display = 'none'"
+        />
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Des moments qui restent <span class="highlight">gravés</span>
+          </h1>
+          <p class="hero__subtitle">
+            Photobooth, vidéobooth et animations gourmandes pour des
+            événements dont on se souvient.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ NOTRE HISTOIRE ============ -->
+      <section class="section about-story" id="notre-histoire" aria-labelledby="story-title">
+        <div class="container about-story__inner">
+          <div class="about-story__content">
+            <p class="eyebrow">Notre histoire</p>
+
+            <h2 class="section__title section__title--left" id="story-title">
+              Une envie : garder une trace de vos plus beaux moments
+            </h2>
+
+            <div class="divider divider--left" aria-hidden="true">
+              <span></span>
+            </div>
+
+            <!-- À PERSONNALISER : ajoute ici le prénom du fondateur, l'année de création, l'anecdote de départ… -->
+            <p class="about-story__text">Instant Gravé Event est né d’une idée simple : un événement passe vite, mais les souvenirs, eux, peuvent rester. Basés en Île-de-France, nous proposons des animations qui font rire, rassemblent les invités et laissent une vraie trace de la journée.</p>
+            <p class="about-story__text">Photobooth, vidéobooth, livres d’or audio et vidéo, mais aussi animations gourmandes : chaque installation a le même objectif, que vos invités repartent avec un souvenir à la main et le sourire aux lèvres.</p>
+
+            <!-- La suite de l'histoire : un bloc dépliable par thème (aucun JS nécessaire) -->
+            <div class="about-more">
+              <details class="about-more__item">
+                <summary class="about-more__summary">Pourquoi «&nbsp;Instant Gravé&nbsp;»&nbsp;?</summary>
+                <div class="about-more__body">
+                  <p class="about-story__text">Parce qu’un instant, c’est fragile. Une photo imprimée qu’on glisse dans sa poche, un message vidéo laissé aux mariés, une photo porte-clé qu’on retrouve des mois plus tard : ce sont ces petits objets et ces petits moments qui font qu’une fête reste vivante bien après la dernière danse.</p>
+                  <p class="about-story__text">Notre nom résume notre métier : transformer un instant en souvenir que l’on peut garder.</p>
+                </div>
+              </details>
+              <details class="about-more__item">
+                <summary class="about-more__summary">Ce que nous proposons</summary>
+                <div class="about-more__body">
+                  <p class="about-story__text">Côté images, nous installons des photobooths, des vidéobooths et des miroirbooths, avec leurs murs de fond, enclos et poteaux LED pour créer un véritable coin photo. Nous proposons aussi la photo porte-clé et des livres d’or audio ou vidéo, pour que chaque invité puisse laisser un message.</p>
+                  <p class="about-story__text">Côté gourmandise, nos animations régalent petits et grands : granita, gaufres, pancakes, barbe à papa et popcorn.</p>
+                  <p class="about-story__text">Nous intervenons pour des mariages, anniversaires et fêtes de famille, mais aussi pour des événements professionnels : entreprises, comités d’entreprise, collectivités et fêtes de ville.</p>
+                </div>
+              </details>
+              <details class="about-more__item">
+                <summary class="about-more__summary">Notre approche</summary>
+                <div class="about-more__body">
+                  <p class="about-story__text">Tout commence par une discussion. Nous voulons comprendre votre événement : sa date, son lieu, le nombre d’invités, l’ambiance recherchée et ce que vous avez en tête. C’est à partir de là que nous composons une formule adaptée, plutôt que de vous proposer un pack identique pour tout le monde.</p>
+                  <p class="about-story__text">Nous accordons de l’importance à la simplicité : une installation soignée, du matériel prêt à l’emploi et des animations faciles à prendre en main pour vos invités, quel que soit leur âge.</p>
+                  <p class="about-story__text">Notre objectif est que vous puissiez profiter de votre événement sans vous soucier de la logistique, en sachant que les souvenirs sont entre de bonnes mains.</p>
+                </div>
+              </details>
+              <details class="about-more__item">
+                <summary class="about-more__summary">Ce qui nous anime</summary>
+                <div class="about-more__body">
+                  <p class="about-story__text">Ce que nous préférons, c’est le moment où l’animation prend vie : le fou rire devant le photobooth, la file qui se forme devant le stand de gaufres, le message ému laissé dans le livre d’or. C’est cette ambiance, spontanée et chaleureuse, qui nous motive à chaque événement.</p>
+                  <p class="about-story__text">Pour la suite, nous souhaitons continuer à faire grandir Instant Gravé Event en gardant ce qui compte pour nous : des animations conviviales, un service sur mesure et une vraie relation avec nos clients.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <figure class="about-story__media reveal">
+            <img
+              src="assets/images/approche.webp"
+              alt="Photobooth Instant Gravé Event lors d'un événement"
+              loading="lazy"
+              decoding="async"
+              onerror="this.parentElement.classList.add('is-placeholder')"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ NOTRE VISION ============ -->
+      <section class="section about-vision" aria-labelledby="vision-title">
+        <div class="container">
+          <div class="about-vision__header">
+            <p class="eyebrow">Notre vision</p>
+
+            <h2 class="section__title" id="vision-title">
+              Chaque événement mérite des souvenirs à sa hauteur
+            </h2>
+
+            <div class="divider" aria-hidden="true">
+              <span></span>
+            </div>
+
+            <p class="about-vision__intro">
+              Chez Instant Gravé Event, nous ne cherchons pas seulement à
+              animer votre fête. Nous voulons créer des moments de partage,
+              des rires et des souvenirs que vos invités auront plaisir à
+              retrouver.
+            </p>
+          </div>
+
+          <div class="about-values reveal">
+            <article class="about-value">
+              <span class="about-value__number" aria-hidden="true">01</span>
+              <div>
+                <h3>Personnalisation</h3>
+                <p>
+                  Chaque animation est pensée selon votre thème, vos couleurs
+                  et l'ambiance que vous souhaitez pour votre événement.
+                </p>
+              </div>
+            </article>
+
+            <article class="about-value">
+              <span class="about-value__number" aria-hidden="true">02</span>
+              <div>
+                <h3>Convivialité</h3>
+                <p>
+                  Nos animations rassemblent : on pose ensemble, on rit, on se
+                  régale et on partage de vrais bons moments.
+                </p>
+              </div>
+            </article>
+
+            <article class="about-value">
+              <span class="about-value__number" aria-hidden="true">03</span>
+              <div>
+                <h3>Simplicité</h3>
+                <p>
+                  Installation, accompagnement, rangement : nous nous occupons
+                  de tout pour que vous profitiez pleinement de votre journée.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ NOTRE FAÇON DE TRAVAILLER ============ -->
+      <section class="section about-process" aria-labelledby="process-title">
+        <div class="container">
+          <div class="about-process__header">
+            <p class="eyebrow">Notre façon de travailler</p>
+
+            <h2 class="section__title" id="process-title">
+              De votre idée à vos souvenirs
+            </h2>
+
+            <div class="divider" aria-hidden="true">
+              <span></span>
+            </div>
+          </div>
+
+          <ol class="process reveal">
+            <li class="process__item">
+              <span class="process__number" aria-hidden="true">01</span>
+              <div class="process__content">
+                <h3>Échanger</h3>
+                <p>
+                  Nous prenons le temps de comprendre votre événement : la
+                  date, le lieu, le nombre d'invités et vos envies.
+                </p>
+              </div>
+            </li>
+
+            <li class="process__item">
+              <span class="process__number" aria-hidden="true">02</span>
+              <div class="process__content">
+                <h3>Composer</h3>
+                <p>
+                  Vous choisissez vos animations et vos options, et nous
+                  construisons une formule adaptée à votre projet.
+                </p>
+              </div>
+            </li>
+
+            <li class="process__item">
+              <span class="process__number" aria-hidden="true">03</span>
+              <div class="process__content">
+                <h3>Immortaliser</h3>
+                <p>
+                  Nous installons tout, vous profitez de votre événement, et
+                  vos invités repartent avec un souvenir.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ CTA ============ -->
+      <section class="section about-cta" aria-labelledby="cta-title">
+        <div class="container about-cta__inner">
+          <p class="eyebrow">Votre événement</p>
+
+          <h2 class="section__title" id="cta-title">
+            Prêt à graver votre prochain instant&nbsp;?
+          </h2>
+
+          <p class="about-cta__text">
+            Mariage, anniversaire, soirée d'entreprise ou fête de ville :
+            parlez-nous de votre projet et nous vous proposerons l'animation
+            qui lui correspond.
+          </p>
+
+          <div class="about-cta__actions">
+            <a href="devis.html" class="btn btn--gold">
+              Demander un devis
+            </a>
+            <a href="contact.html" class="btn btn--outline">
+              Nous contacter
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <span class="logo__main">Instant Gravé</span>
+          <span class="logo__sub">Event</span>
+        </div>
+        <p class="site-footer__tagline">
+          Photobooth, vidéobooth et animations événementielles pour vos
+          événements personnels et professionnels.
+        </p>
+        <div class="site-footer__socials">
+          <a
+            href="https://www.instagram.com/instant.grave"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
+          <a
+            href="https://www.tiktok.com/@instantgrave"
+            target="_blank"
+            rel="noopener noreferrer"
+            >TikTok</a
+          >
+          <a
+            href="https://www.snapchat.com/add/instant.grave"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Snapchat</a
+          >
+        </div>
+        <p class="site-footer__copy">
+          © <span id="current-year">2026</span> Instant Gravé Event. Tous droits
+          réservés.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ============ BOUTON WHATSAPP FLOTTANT ============ -->
+    <a
+      href="https://wa.me/33667157399"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-float"
+      aria-label="Contacter Instant Gravé sur WhatsApp"
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.696 4.607 1.897 6.475L4 29l7.72-1.86A11.94 11.94 0 0 0 16 27c6.628 0 12-5.373 12-12S22.629 3 16.001 3zm0 21.8a9.76 9.76 0 0 1-4.98-1.363l-.357-.213-4.583 1.104 1.223-4.47-.232-.367A9.76 9.76 0 0 1 6.2 15c0-5.404 4.397-9.8 9.801-9.8 5.403 0 9.8 4.396 9.8 9.8 0 5.404-4.397 9.8-9.8 9.8zm5.377-7.34c-.294-.147-1.74-.859-2.01-.957-.27-.098-.466-.147-.663.147-.196.294-.76.957-.933 1.153-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.779-1.463-1.74-1.635-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.441-.514.147-.172.196-.294.294-.49.098-.196.049-.367-.024-.514-.073-.147-.663-1.597-.909-2.187-.239-.574-.482-.497-.663-.506l-.564-.01c-.196 0-.514.073-.784.367-.27.294-1.03 1.006-1.03 2.455 0 1.448 1.055 2.848 1.202 3.044.147.196 2.076 3.17 5.032 4.444.703.303 1.251.484 1.679.62.705.224 1.347.192 1.854.117.566-.084 1.74-.712 1.985-1.4.245-.69.245-1.28.172-1.4-.073-.122-.269-.196-.563-.343z"
+        />
+      </svg>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
