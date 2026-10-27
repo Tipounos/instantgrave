@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nos prestations — Instant Gravé Event</title>
+    <meta
+      name="description"
+      content="Photobooth, vidéobooth, miroirbooth, décor photo, livres d'or et animations gourmandes : découvrez toutes les prestations Instant Gravé Event pour vos événements."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="site-header">
+      <div class="header__inner">
+        <a href="index.html" class="logo" aria-label="Instant Gravé Event, retour à l'accueil">
+          <img src="assets/images/logo.webp" alt="Instant Gravé Event" />
+        </a>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+          <ul class="main-nav__list">
+            <li><a href="index.html" class="main-nav__link">Accueil</a></li>
+            <li><a href="prestations.html" class="main-nav__link" aria-current="page">Prestations</a></li>
+            <li><a href="about.html" class="main-nav__link">Qui sommes-nous</a></li>
+            <li><a href="contact.html" class="main-nav__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__actions">
+          <a href="devis.html" class="btn btn--gold btn--small header__cta">Demander un devis</a>
+          <button
+            type="button"
+            class="burger"
+            id="burger"
+            aria-expanded="false"
+            aria-controls="main-nav"
+            aria-label="Ouvrir le menu"
+          >
+            <span class="burger__bar"></span>
+            <span class="burger__bar"></span>
+            <span class="burger__bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!--
+        Prestations et tarifs mis à jour à partir du site officiel.
+        - Images : assets/images/prestations/<nom>-1.webp, -2, -3 (1 à 3 par prestation).
+          Si une image est absente, un fond doré avec ✦ s'affiche à la place.
+        - Chaque prestation a un id (ex. #photobooth) : un lien prestations.html#photobooth
+          ouvre directement la bonne prestation.
+      -->
+
+      <!-- ============ HERO ============ -->
+      <section class="hero hero--page">
+        <div class="hero__content">
+          <p class="eyebrow eyebrow--on-dark">Nos prestations</p>
+          <h1 class="hero__title">Des animations pour chaque événement</h1>
+          <p class="hero__subtitle">
+            Choisissez votre catégorie et faites défiler les prestations.
+            Installation et désinstallation incluses, devis personnalisé sur
+            demande.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ NAVIGATION PAR CATÉGORIE ============ -->
+      <nav class="offers-nav" id="offers-nav" aria-label="Catégories de prestations">
+        <ul class="offers-nav__list" id="offers-nav-list">
+          <li><a class="offers-nav__link" href="#photo-video">Photo &amp; vidéo</a></li>
+          <li><a class="offers-nav__link" href="#decor">Décor &amp; accessoires</a></li>
+          <li><a class="offers-nav__link" href="#souvenirs">Souvenirs &amp; livres d'or</a></li>
+          <li><a class="offers-nav__link" href="#gourmand">Animations gourmandes</a></li>
+        </ul>
+      </nav>
+
+      <!-- ============ CATÉGORIE 1 : PHOTO & VIDÉO (clair) ============ -->
+      <section class="section offer-cat offer-cat--light" id="photo-video">
+        <div class="container">
+          <header class="offer-cat__header">
+            <h2 class="section__title">Photo &amp; vidéo</h2>
+            <div class="divider" aria-hidden="true"><span></span></div>
+            <p class="offer-cat__intro">
+              Des bornes interactives pour que vos invités s'amusent et
+              repartent avec un souvenir.
+            </p>
+          </header>
+
+          <div class="offer-carousel" data-offer-carousel role="region" aria-roledescription="carousel" aria-label="Prestations photo et vidéo">
+            <div class="offer-carousel__viewport" tabindex="0">
+
+              <article class="offer-slide" id="photobooth" data-title="Photobooth" role="group" aria-roledescription="slide" aria-label="Photobooth">
+                <div class="offer-slide__media" data-count="2">
+                  <figure><img src="assets/images/prestations/photobooth.webp" alt="Photobooth Instant Gravé (photo 1)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                  <figure><img src="assets/images/produits/photobooth-2.webp" alt="Photobooth Instant Gravé (photo 2)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Photobooth</h3>
+                  <p class="offer-slide__price">À partir de 420 €</p>
+                  <p class="offer-slide__text">
+                    Une borne photo simple d’utilisation avec un visuel personnalisé. Vos invités peuvent imprimer leurs photos en instantané ou les recevoir par QR code ou e-mail. La prestation comprend l’installation, un hôte ou une hôtesse, les impressions HD illimitées, les accessoires et un lien numérique de l’événement.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+              <article class="offer-slide" id="photobooth-v2" data-title="Photobooth V2" role="group" aria-roledescription="slide" aria-label="Photobooth V2">
+                <div class="offer-slide__media" data-count="1">
+                  <figure><img src="assets/images/prestations/photobooth-v2.webp" alt="Photobooth V2 Instant Gravé (photo 1)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Photobooth V2</h3>
+                  <p class="offer-slide__price">À partir de 480 €</p>
+                  <p class="offer-slide__text">
+                    Une borne photo avec visuel personnalisé, impression instantanée ou envoi des photos par QR code ou e-mail. La prestation comprend l’installation, un hôte ou une hôtesse, les impressions HD illimitées, les accessoires et un lien numérique de l’événement.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+              <article class="offer-slide" id="videobooth" data-title="Vidéobooth" role="group" aria-roledescription="slide" aria-label="Vidéobooth">
+                <div class="offer-slide__media" data-count="2">
+                  <figure><img src="assets/images/prestations/videobooth.webp" alt="Vidéobooth Instant Gravé (photo 1)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                  <figure><img src="assets/images/produits/videobooth-2.webp" alt="Vidéobooth Instant Gravé (photo 2)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Vidéobooth</h3>
+                  <p class="offer-slide__price">À partir de 420 €</p>
+                  <p class="offer-slide__text">
+                    Une expérience vidéo à 360° en qualité 4K, seul ou à plusieurs. Les invités reçoivent leurs vidéos en instantané par SMS, AirDrop ou e-mail, avec un visuel et une musique personnalisés. Installation, hôte ou hôtesse, vidéos illimitées, poteaux VIP et accessoires inclus.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+              <article class="offer-slide" id="miroirbooth" data-title="Miroirbooth" role="group" aria-roledescription="slide" aria-label="Miroirbooth">
+                <div class="offer-slide__media" data-count="2">
+                  <figure><img src="assets/images/prestations/miroirbooth.webp" alt="Miroirbooth Instant Gravé" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                  <figure><img src="assets/images/produits/miroirbooth-2.webp" alt="Miroirbooth Instant Gravé" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Miroirbooth</h3>
+                  <p class="offer-slide__price">À partir de 600 €</p>
+                  <p class="offer-slide__text">
+                    Un miroir élégant et prestigieux, disponible avec différents cadres, dont un style baroque doré ou un éclairage Hollywood. Les photos peuvent être imprimées instantanément ou envoyées par QR code ou e-mail avec un visuel personnalisé. Installation, hôte ou hôtesse, impressions HD illimitées et accessoires inclus.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+            </div>
+
+            <div class="offer-carousel__controls">
+              <button type="button" class="offer-arrow" data-offer-prev aria-label="Prestation précédente">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+              </button>
+              <div class="offer-pills" role="group" aria-label="Choisir une prestation"></div>
+              <button type="button" class="offer-arrow" data-offer-next aria-label="Prestation suivante">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CATÉGORIE 2 : DÉCOR & ACCESSOIRES (sombre) ============ -->
+      <section class="section offer-cat offer-cat--dark" id="decor">
+        <div class="container">
+          <header class="offer-cat__header">
+            <h2 class="section__title">Décor &amp; accessoires</h2>
+            <div class="divider" aria-hidden="true"><span></span></div>
+            <p class="offer-cat__intro">
+              Pour mettre votre espace photo en scène et lui donner du style.
+            </p>
+          </header>
+
+          <div class="offer-carousel" data-offer-carousel role="region" aria-roledescription="carousel" aria-label="Prestations décor et accessoires">
+            <div class="offer-carousel__viewport" tabindex="0">
+
+              <article class="offer-slide" id="mur-de-fond" data-title="Mur de fond" role="group" aria-roledescription="slide" aria-label="Mur de fond">
+                <div class="offer-slide__media" data-count="1">
+                  <figure><img src="assets/images/prestations/mur-de-fond.webp" alt="Mur de fond Instant Gravé (photo 1)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Mur de fond</h3>
+                  <p class="offer-slide__price">À partir de 20 €</p>
+                  <p class="offer-slide__text">
+                    Un mur de fond qui dissimule l’arrière-plan et met davantage vos photos en valeur. Installation et désinstallation incluses.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+              <article class="offer-slide" id="enclos" data-title="Enclos" role="group" aria-roledescription="slide" aria-label="Enclos">
+                <div class="offer-slide__media" data-count="2">
+                  <figure><img src="assets/images/prestations/enclos.webp" alt="Enclos Instant Gravé" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                  <figure><img src="assets/images/contact.webp" alt="Enclos Instant Gravé" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Enclos</h3>
+                  <p class="offer-slide__price">À partir de 80 €</p>
+                  <p class="offer-slide__text">
+                    Un enclos qui dissimule l’arrière-plan et met davantage vos vidéos en valeur. Installation et désinstallation incluses.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+              <article class="offer-slide" id="poteaux-led" data-title="Poteaux LED" role="group" aria-roledescription="slide" aria-label="Poteaux LED">
+                <div class="offer-slide__media" data-count="2">
+                  <figure><img src="assets/images/prestations/poteaux-led.webp" alt="Poteaux LED Instant Gravé (photo 1)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                  <figure><img src="assets/images/contact.webp" alt="Poteaux LED Instant Gravé (photo 2)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Poteaux LED</h3>
+                  <p class="offer-slide__price">À partir de 100 €</p>
+                  <p class="offer-slide__text">
+                    Des poteaux LED pour animer vos événements avec une mise en lumière. Installation et désinstallation incluses.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+
+              <article class="offer-slide" id="panneau-fontaine" data-title="Panneau fontaine" role="group" aria-roledescription="slide" aria-label="Pop-corn">
+                <div class="offer-slide__media" data-count="1">
+                  <figure><img src="assets/images/prestations/panneau-fontaine.webp" alt="Panneau fontaine Instant Gravé" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Panneau fontaine</h3>
+                  <p class="offer-slide__price">À partir de 350 €</p>
+                  <p class="offer-slide__text">
+                    Un panneau fontaine chic et personnalisable, idéal pour afficher un message d’accueil, un plan de table ou un logo. Installation, désinstallation et création du visuel incluses.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="offer-carousel__controls">
+              <button type="button" class="offer-arrow" data-offer-prev aria-label="Prestation précédente">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+              </button>
+              <div class="offer-pills" role="group" aria-label="Choisir une prestation"></div>
+              <button type="button" class="offer-arrow" data-offer-next aria-label="Prestation suivante">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CATÉGORIE 3 : SOUVENIRS & LIVRES D'OR (clair) ============ -->
+      <section class="section offer-cat offer-cat--light" id="souvenirs">
+        <div class="container">
+          <header class="offer-cat__header">
+            <h2 class="section__title">Souvenirs &amp; livres d'or</h2>
+            <div class="divider" aria-hidden="true"><span></span></div>
+            <p class="offer-cat__intro">
+              Des souvenirs à emporter et des messages à garder pour longtemps.
+            </p>
+          </header>
+
+          <div class="offer-carousel" data-offer-carousel role="region" aria-roledescription="carousel" aria-label="Prestations souvenirs et livres d'or">
+            <div class="offer-carousel__viewport" tabindex="0">
+
+              <article class="offer-slide" id="photo-porte-cle" data-title="Photo porte-clé" role="group" aria-roledescription="slide" aria-label="Photo porte-clé">
+                <div class="offer-slide__media" data-count="1">
+                  <figure><img src="assets/images/prestations/porte-cle.webp" alt="Photo porte-clé Instant Gravé (photo 1)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Photo porte-clé</h3>
+                  <p class="offer-slide__price">À partir de 100 unités</p>
+                  <p class="offer-slide__text">
+                    Un souvenir personnalisé que vos invités pourront emporter avec eux. La prestation est proposée à partir de 100 unités et comprend l’installation ainsi qu’un hôte ou une hôtesse.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+              <article class="offer-slide" id="livre-d-or" data-title="Livre d'or audio &amp; vidéo" role="group" aria-roledescription="slide" aria-label="Livre d'or audio et vidéo">
+                <div class="offer-slide__media" data-count="3">
+                  <figure><img src="assets/images/prestations/livre-d-or-audio.webp" alt="Livre d'or Instant Gravé (photo 1)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                  <figure><img src="assets/images/prestations/livre-d-or-video.webp" alt="Livre d'or Instant Gravé (photo 2)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                  <figure><img src="assets/images/produits/livre-d-or-audio-2.webp" alt="Livre d'or Instant Gravé (photo 3)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Livre d'or audio &amp; vidéo</h3>
+                  <p class="offer-slide__price">À partir de 120 € (audio) / 150 € (vidéo)</p>
+                  <p class="offer-slide__text">
+                    Le livre d’or audio permet aux invités d’enregistrer des messages vocaux, tandis que le livre d’or vidéo recueille leurs messages filmés. Les fichiers sont transmis après l’événement. Installation et désinstallation, création du message d’accueil et envoi des enregistrements inclus. Structures décoratives disponibles en supplément à partir de 50 €.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+            </div>
+
+            <div class="offer-carousel__controls">
+              <button type="button" class="offer-arrow" data-offer-prev aria-label="Prestation précédente">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+              </button>
+              <div class="offer-pills" role="group" aria-label="Choisir une prestation"></div>
+              <button type="button" class="offer-arrow" data-offer-next aria-label="Prestation suivante">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CATÉGORIE 4 : ANIMATIONS GOURMANDES (sombre) ============ -->
+      <section class="section offer-cat offer-cat--dark" id="gourmand">
+        <div class="container">
+          <header class="offer-cat__header">
+            <h2 class="section__title">Animations gourmandes</h2>
+            <div class="divider" aria-hidden="true"><span></span></div>
+            <p class="offer-cat__intro">
+              Des stands à déguster sur place, pour régaler petits et grands.
+            </p>
+          </header>
+
+          <div class="offer-carousel" data-offer-carousel role="region" aria-roledescription="carousel" aria-label="Animations gourmandes">
+            <div class="offer-carousel__viewport" tabindex="0">
+
+              <article class="offer-slide" id="barbe-a-papa" data-title="Barbe à papa" role="group" aria-roledescription="slide" aria-label="Barbe à papa">
+                <div class="offer-slide__media" data-count="1">
+                  <figure><img src="assets/images/prestations/barbe-a-papa.webp" alt="Stand barbe à papa Instant Gravé (photo 1)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Barbe à papa</h3>
+                  <p class="offer-slide__price">À partir de 250 €</p>
+                  <p class="offer-slide__text">
+                    Une animation sucrée et festive pour tous les âges. La prestation comprend l’installation, un hôte ou une hôtesse, le sucre et les bâtonnets.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+
+
+              <article class="offer-slide" id="granita" data-title="Granita" role="group" aria-roledescription="slide" aria-label="Granita">
+                <div class="offer-slide__media" data-count="1">
+                  <figure><img src="assets/images/prestations/granita.webp" alt="Machine à granita Instant Gravé (photo 1)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Granita</h3>
+                  <p class="offer-slide__price">À partir de 250 €</p>
+                  <p class="offer-slide__text">
+                    Une animation rafraîchissante avec des granités colorés. La prestation comprend l’installation, un hôte ou une hôtesse, trois parfums (fraise, cola et tropical blue), les verres et les pailles.
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+              <article class="offer-slide" id="gaufres" data-title="Gaufres" role="group" aria-roledescription="slide" aria-label="Gaufres">
+                <div class="offer-slide__media" data-count="1">
+                  <figure><img src="assets/images/prestations/gaufres.webp" alt="Stand gaufres Instant Gravé (photo 1)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Gaufres</h3>
+                  <p class="offer-slide__price">À partir de 250 €</p>
+                  <p class="offer-slide__text">
+                    Une animation gourmande avec gaufres et garnitures. La prestation comprend l’installation, un hôte ou une hôtesse, sucre, Nutella, caramel et toppings (Speculoos, Oreo…).
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+              <article class="offer-slide" id="pancakes" data-title="Pancakes" role="group" aria-roledescription="slide" aria-label="Pancakes">
+                <div class="offer-slide__media" data-count="1">
+                  <figure><img src="assets/images/prestations/pancakes.webp" alt="Stand pancakes Instant Gravé" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('is-placeholder')" /></figure>
+                </div>
+                <div class="offer-slide__body">
+                  <h3 class="offer-slide__title">Pancakes</h3>
+                  <p class="offer-slide__price">À partir de 250 €</p>
+                  <p class="offer-slide__text">
+                    Des pancakes moelleux accompagnés de garnitures gourmandes. La prestation comprend l’installation, un hôte ou une hôtesse, sucre, Nutella, caramel et toppings (Speculoos, Oreo…).
+                  </p>
+                  <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+                </div>
+              </article>
+
+            </div>
+
+            <div class="offer-carousel__controls">
+              <button type="button" class="offer-arrow" data-offer-prev aria-label="Prestation précédente">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+              </button>
+              <div class="offer-pills" role="group" aria-label="Choisir une prestation"></div>
+              <button type="button" class="offer-arrow" data-offer-next aria-label="Prestation suivante">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ APPEL À L'ACTION (clair) ============ -->
+      <section class="section offer-cta">
+        <div class="container offer-cta__inner">
+          <h2 class="section__title">Un événement en vue ?</h2>
+          <p class="offer-cta__text">
+            Dites-nous la date, le lieu et le nombre d'invités : nous vous
+            proposons la combinaison de prestations la plus adaptée.
+          </p>
+          <div class="offer-cta__actions">
+            <a href="devis.html" class="btn btn--gold">Demander un devis</a>
+            <a href="https://wa.me/33667157399" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Écrire sur WhatsApp</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <span class="logo__main">Instant Gravé</span>
+          <span class="logo__sub">Event</span>
+        </div>
+        <p class="site-footer__tagline">
+          Photobooth, vidéobooth et animations événementielles pour vos
+          événements personnels et professionnels.
+        </p>
+        <div class="site-footer__socials">
+          <a href="https://www.instagram.com/instant.grave" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.tiktok.com/@instantgrave" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://www.snapchat.com/add/instant.grave" target="_blank" rel="noopener noreferrer">Snapchat</a>
+        </div>
+        <p class="site-footer__copy">
+          © <span id="current-year">2026</span> Instant Gravé Event. Tous droits réservés.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ============ BOUTON WHATSAPP FLOTTANT ============ -->
+    <a
+      href="https://wa.me/33667157399"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-float"
+      aria-label="Contacter Instant Gravé sur WhatsApp"
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.696 4.607 1.897 6.475L4 29l7.72-1.86A11.94 11.94 0 0 0 16 27c6.628 0 12-5.373 12-12S22.629 3 16.001 3zm0 21.8a9.76 9.76 0 0 1-4.98-1.363l-.357-.213-4.583 1.104 1.223-4.47-.232-.367A9.76 9.76 0 0 1 6.2 15c0-5.404 4.397-9.8 9.801-9.8 5.403 0 9.8 4.396 9.8 9.8 0 5.404-4.397 9.8-9.8 9.8zm5.377-7.34c-.294-.147-1.74-.859-2.01-.957-.27-.098-.466-.147-.663.147-.196.294-.76.957-.933 1.153-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.779-1.463-1.74-1.635-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.441-.514.147-.172.196-.294.294-.49.098-.196.049-.367-.024-.514-.073-.147-.663-1.597-.909-2.187-.239-.574-.482-.497-.663-.506l-.564-.01c-.196 0-.514.073-.784.367-.27.294-1.03 1.006-1.03 2.455 0 1.448 1.055 2.848 1.202 3.044.147.196 2.076 3.17 5.032 4.444.703.303 1.251.484 1.679.62.705.224 1.347.192 1.854.117.566-.084 1.74-.712 1.985-1.4.245-.69.245-1.28.172-1.4-.073-.122-.269-.196-.563-.343z"
+        />
+      </svg>
+    </a>
+
+    <!-- Script propre à cette page (menu mobile + carrousels). Pas besoin de script.js ici. -->
+    <script src="prestations.js"></script>
+  </body>
+</html>

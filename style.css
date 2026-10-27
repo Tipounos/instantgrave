@@ -3041,3 +3041,1052 @@ ol.process {
 .presta-gallery-head .divider {
   margin-bottom: var(--space-sm);
 }
+
+/* ==========================================================================
+   PAGE PRESTATIONS — catégories + carrousels
+   ➜ À COLLER TOUT EN BAS DE style.css (après le dernier bloc existant).
+   Utilise uniquement les variables de :root : change-les là-bas pour
+   modifier le style global. Préfixes utilisés : .offers-*, .offer-*
+   ========================================================================== */
+
+/* ---------- Barre de catégories (collée sous le header) ---------- */
+
+.offers-nav {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 100;
+  background: rgba(251, 249, 244, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.offers-nav__list {
+  position: relative; /* repère pour centrer le lien actif (JS) */
+  display: flex;
+  justify-content: flex-start;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.offers-nav__list::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .offers-nav__list {
+    justify-content: center;
+  }
+}
+
+.offers-nav__link {
+  display: block;
+  flex: 0 0 auto;
+  padding: 1rem 1.4rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+  border-bottom: 3px solid transparent;
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.offers-nav__link:hover {
+  color: var(--color-text);
+}
+
+.offers-nav__link[aria-current="true"] {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-gold-dark);
+}
+
+.offers-nav__link:focus-visible {
+  outline-offset: -4px;
+}
+
+/* ---------- Catégories : fond clair / sombre en alternance ---------- */
+
+.offer-cat {
+  background: var(--oc-bg);
+  scroll-margin-top: 54px; /* hauteur approximative de .offers-nav */
+}
+
+.offer-cat--light {
+  --oc-bg: var(--color-cream);
+  --oc-card: var(--color-surface);
+  --oc-title: var(--color-ink);
+  --oc-text: var(--color-text-muted);
+  --oc-accent: var(--color-gold-dark);
+  --oc-line: var(--color-border);
+  --oc-control: rgba(21, 16, 10, 0.28);
+}
+
+.offer-cat--dark {
+  --oc-bg: var(--color-ink);
+  --oc-card: var(--color-ink-light);
+  --oc-title: var(--color-white);
+  --oc-text: rgba(250, 246, 238, 0.75);
+  --oc-accent: var(--color-gold-bright);
+  --oc-line: var(--color-border-on-dark);
+  --oc-control: rgba(250, 246, 238, 0.3);
+}
+
+.offer-cat--dark a:focus-visible,
+.offer-cat--dark button:focus-visible,
+.offer-cat--dark .offer-carousel__viewport:focus-visible {
+  outline-color: var(--color-gold-bright);
+}
+
+.offer-cat__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.offer-cat .section__title {
+  color: var(--oc-title);
+}
+
+.offer-cat .divider {
+  margin-block: var(--space-sm);
+}
+
+.offer-cat__intro {
+  max-width: 52ch;
+  margin-inline: auto;
+  color: var(--oc-text);
+}
+
+/* ---------- Carrousel : une prestation à la fois ---------- */
+
+.offer-carousel {
+  max-width: 1040px;
+  margin-inline: auto;
+}
+
+/* Piste en scroll-snap : swipe tactile natif, flèches et pastilles via JS */
+.offer-carousel__viewport {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  background: var(--oc-card);
+  border: 1px solid var(--oc-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.offer-carousel__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.offer-carousel__viewport:focus-visible {
+  outline: 2px solid var(--color-gold-dark);
+  outline-offset: 3px;
+}
+
+.offer-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  min-height: 420px;
+}
+
+/* ---------- Images (1 à 3 selon data-count) ---------- */
+
+.offer-slide__media {
+  display: grid;
+  gap: 4px;
+  background: var(--oc-card);
+}
+
+.offer-slide__media[data-count="2"] {
+  grid-template-columns: 1fr 1fr;
+}
+
+.offer-slide__media[data-count="3"] {
+  grid-template-columns: 1.35fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.offer-slide__media[data-count="3"] figure:first-child {
+  grid-row: span 2;
+}
+
+.offer-slide__media figure {
+  position: relative;
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--color-gold-light),
+    var(--color-ink-light)
+  );
+}
+
+.offer-slide__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Image manquante */
+.offer-slide__media figure.is-placeholder::after {
+  content: "✦";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--color-gold);
+}
+
+/* ---------- Texte de la prestation ---------- */
+
+.offer-slide__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.offer-slide__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.1rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--oc-title);
+}
+
+.offer-slide__price {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--oc-accent);
+}
+
+.offer-slide__text {
+  max-width: 46ch;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--oc-text);
+}
+
+.offer-slide__body .btn {
+  margin: var(--space-xs) 0 0;
+}
+
+/* Bouton doré (dégradé du logo) sur fond sombre, comme sur l'accueil */
+.offer-cat--dark .btn--gold {
+  background: var(--gold-gradient);
+  color: var(--color-ink);
+  font-weight: 600;
+  border-color: transparent;
+}
+
+.offer-cat--dark .btn--gold:hover {
+  background: var(--color-gold-bright);
+  color: var(--color-ink);
+}
+
+/* ---------- Commandes : flèches + pastilles (générées par prestations.js) ---------- */
+
+.offer-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.offer-carousel__controls[hidden] {
+  display: none;
+}
+
+.offer-arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid var(--oc-control);
+  color: var(--oc-title);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.offer-arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.offer-arrow:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-ink);
+}
+
+.offer-arrow:active {
+  transform: scale(0.94);
+}
+
+.offer-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.offer-pill {
+  padding: 0.5em 1.2em;
+  border: 1px solid var(--oc-control);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--oc-title);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.offer-pill:hover {
+  border-color: var(--color-gold);
+}
+
+.offer-pill[aria-current="true"] {
+  background: var(--gold-gradient);
+  border-color: transparent;
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+/* ---------- Appel à l'action final (clair) ---------- */
+
+.offer-cta {
+  background: var(--color-cream-dark);
+  text-align: center;
+}
+
+.offer-cta__inner {
+  max-width: 640px;
+}
+
+.offer-cta .section__title {
+  color: var(--color-ink);
+}
+
+.offer-cta__text {
+  max-width: 52ch;
+  margin: var(--space-sm) auto var(--space-md);
+  color: var(--color-text-muted);
+}
+
+.offer-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.offer-cta .btn {
+  margin: 0;
+}
+
+.offer-cta .btn--outline {
+  color: var(--color-ink);
+  border-color: var(--color-gold-dark);
+}
+
+.offer-cta .btn--outline:hover {
+  background: var(--color-gold-dark);
+  color: var(--color-white);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+  .offer-slide {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .offer-slide__media {
+    height: 280px;
+  }
+
+  .offer-slide__body {
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 560px) {
+  .offer-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .offer-carousel__controls {
+    gap: 0.5rem;
+  }
+}
+
+/* ==========================================================================
+   PAGE PRESTATIONS — améliorations design & UX
+   ➜ À COLLER TOUT EN BAS DE style.css (après le bloc « catégories + carrousels »).
+   Ces règles complètent / remplacent certaines règles du bloc précédent.
+   ========================================================================== */
+
+/* ---------- Header : légère ombre dès qu'on scrolle ---------- */
+
+.site-header {
+  transition: box-shadow var(--transition-mid);
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 6px 24px rgba(21, 16, 10, 0.08);
+}
+
+/* ---------- Rythme : espaces entre catégories moins démesurés ---------- */
+
+.offer-cat {
+  padding-block: clamp(3.5rem, 8vw, 5.5rem);
+}
+
+.offer-cat__header {
+  margin-bottom: var(--space-md);
+}
+
+/* ---------- Barre de catégories : indice de défilement sur mobile ---------- */
+
+@media (max-width: 899px) {
+  .offers-nav__list {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 20px,
+      #000 calc(100% - 20px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 20px,
+      #000 calc(100% - 20px),
+      transparent 100%
+    );
+  }
+}
+
+/* ---------- Slide : compteur, prix, bouton ---------- */
+
+/* Compteur « 2 / 4 » (rempli par le JS via data-pos) */
+.offer-slide__body[data-pos]::before {
+  content: attr(data-pos);
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  color: var(--oc-text);
+}
+
+/* Le prix devient une pastille : il se repère d'un coup d'œil */
+.offer-slide__price {
+  padding: 0.25em 0.95em;
+  border: 1px solid var(--oc-accent);
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+}
+
+/* Zone de tap confortable */
+.offer-slide__body .btn {
+  min-height: 46px;
+  justify-content: center;
+}
+
+/* Le texte réapparaît en douceur quand on change de prestation (action de la personne) */
+@keyframes offer-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.offer-carousel.has-moved .offer-slide.is-active .offer-slide__body > * {
+  animation: offer-rise 0.45s ease both;
+}
+
+.offer-carousel.has-moved .offer-slide.is-active .offer-slide__body > :nth-child(2) {
+  animation-delay: 0.05s;
+}
+
+.offer-carousel.has-moved .offer-slide.is-active .offer-slide__body > :nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.offer-carousel.has-moved .offer-slide.is-active .offer-slide__body > :nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+.offer-carousel.has-moved .offer-slide.is-active .offer-slide__body > :nth-child(5) {
+  animation-delay: 0.2s;
+}
+
+/* ---------- Photos cliquables ---------- */
+
+.offer-slide__media figure img {
+  transition: transform 0.6s ease;
+}
+
+.offer-slide__media figure[data-zoom] {
+  cursor: zoom-in;
+}
+
+.offer-slide__media figure[data-zoom]:hover img {
+  transform: scale(1.04);
+}
+
+.offer-slide__media figure[data-zoom]:focus-visible {
+  outline: 3px solid var(--color-gold-bright);
+  outline-offset: -3px;
+}
+
+/* Petite loupe : visible au survol / focus, toujours visible sur tactile */
+.offer-slide__media figure[data-zoom]::before {
+  content: "";
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(251, 249, 244, 0.92)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2315100a' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6'/%3E%3Cpath d='m20 20-4.2-4.2M11 8v6M8 11h6'/%3E%3C/svg%3E")
+    center / 18px no-repeat;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+}
+
+.offer-slide__media figure[data-zoom]:hover::before,
+.offer-slide__media figure[data-zoom]:focus-visible::before {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .offer-slide__media figure[data-zoom]::before {
+    opacity: 0.9;
+  }
+}
+
+/* ---------- Commandes : pastilles qui défilent sur petit écran ---------- */
+
+.offer-pills {
+  position: relative; /* repère pour centrer la pastille active (JS) */
+}
+
+.offer-pill {
+  min-height: 40px;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .offer-pills {
+    flex: 1 1 0;
+    min-width: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-block: 2px;
+  }
+
+  .offer-pills::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ---------- Lightbox ---------- */
+
+body.has-lightbox {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: clamp(1rem, 4vw, 3rem);
+  border: 0;
+  background: rgba(21, 16, 10, 0.94);
+  color: var(--color-white);
+}
+
+.lightbox[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  animation: lightbox-in 0.25s ease;
+}
+
+.lightbox::backdrop {
+  background: transparent;
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox__img {
+  max-width: min(100%, 1100px);
+  max-height: calc(100% - 3.5rem);
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-strong);
+}
+
+.lightbox__caption {
+  font-size: var(--fs-small);
+  color: var(--color-text-on-dark);
+}
+
+.lightbox__btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(250, 246, 238, 0.3);
+  background: rgba(250, 246, 238, 0.08);
+  color: var(--color-white);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.lightbox__btn[hidden] {
+  display: none;
+}
+
+.lightbox__btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lightbox__btn:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-ink);
+}
+
+.lightbox__btn:focus-visible {
+  outline-color: var(--color-gold-bright);
+}
+
+.lightbox__close {
+  top: var(--space-sm);
+  right: var(--space-sm);
+}
+
+.lightbox__nav {
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.lightbox__nav--prev {
+  left: var(--space-sm);
+}
+
+.lightbox__nav--next {
+  right: var(--space-sm);
+}
+
+@media (max-width: 560px) {
+  /* Sur mobile on navigue au swipe : les flèches se rangent en bas */
+  .lightbox__nav {
+    top: auto;
+    bottom: var(--space-sm);
+    translate: none;
+  }
+}
+
+/* ---------- Mouvement réduit ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-carousel.has-moved .offer-slide.is-active .offer-slide__body > *,
+  .lightbox[open] {
+    animation: none;
+  }
+
+  .offer-slide__media figure img {
+    transition: none;
+  }
+}
+
+/* ========================================================================== 
+   RESPONSIVE — PAGE PRESTATIONS (ajustements complémentaires)
+   Ces règles sont volontairement placées en fin de fichier pour prendre
+   le dessus sur les styles précédents sans casser le design existant.
+   ========================================================================== */
+
+html {
+  scroll-padding-top: calc(var(--header-height) + 3.5rem);
+}
+
+body {
+  overflow-wrap: anywhere;
+}
+
+/* Évite que les titres ou les CTA débordent sur les écrans intermédiaires. */
+.hero--page {
+  min-height: clamp(420px, 62svh, 680px);
+  padding: calc(var(--header-height) + clamp(2rem, 5vw, 4rem)) 1rem clamp(3rem, 7vw, 5rem);
+}
+
+.hero--page .hero__content {
+  width: min(100%, 780px);
+  margin-inline: auto;
+}
+
+.hero--page .hero__title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  max-width: 17ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+.hero--page .hero__subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.7;
+}
+
+/* Barre de catégories : vraie zone de swipe, sans éléments compressés. */
+.offers-nav {
+  top: var(--header-height);
+  max-width: 100%;
+}
+
+.offers-nav__list {
+  padding-inline: clamp(0.5rem, 2vw, 1rem);
+  overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.offers-nav__link {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem clamp(0.8rem, 1.8vw, 1.4rem);
+  font-size: clamp(0.82rem, 1.2vw, 0.92rem);
+}
+
+/* Les carrousels restent dans la largeur de l'écran. */
+.offer-cat .container {
+  min-width: 0;
+}
+
+.offer-carousel {
+  width: 100%;
+  min-width: 0;
+}
+
+.offer-carousel__viewport {
+  min-width: 0;
+  scroll-padding-inline: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.offer-slide {
+  min-width: 0;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+}
+
+.offer-slide__media,
+.offer-slide__body {
+  min-width: 0;
+}
+
+.offer-slide__body {
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.offer-slide__title,
+.offer-slide__text,
+.offer-slide__price {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.offer-slide__text {
+  line-height: 1.7;
+}
+
+.offer-slide__body .btn {
+  max-width: 100%;
+  text-align: center;
+  white-space: normal;
+}
+
+.offer-carousel__controls {
+  flex-wrap: wrap;
+}
+
+.offer-pills {
+  max-width: min(100%, 680px);
+}
+
+.offer-pill {
+  min-height: 40px;
+}
+
+/* Tablettes et petits ordinateurs : image et texte empilés avant d'être trop serrés. */
+@media (max-width: 900px) {
+  .offer-slide {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .offer-slide__media {
+    height: clamp(230px, 42vw, 360px);
+    min-height: 0;
+  }
+
+  .offer-slide__media[data-count="3"] {
+    grid-template-columns: 1.25fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .offer-slide__body {
+    padding: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .offer-slide__text {
+    max-width: 60ch;
+  }
+}
+
+@media (max-width: 640px) {
+  .header__inner {
+    gap: 0.75rem;
+    padding-inline: 1rem;
+  }
+
+  .logo img {
+    max-width: min(48vw, 170px);
+    height: auto;
+    max-height: calc(var(--header-height) - 20px);
+    object-fit: contain;
+  }
+
+  .burger {
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .burger__bar {
+    width: 23px;
+  }
+
+  .main-nav__list {
+    padding: 0.75rem 1rem 1rem;
+    gap: 0.25rem;
+  }
+
+  .main-nav__link {
+    display: block;
+    padding: 0.8rem 1rem;
+  }
+
+  .hero--page {
+    min-height: 390px;
+    padding: calc(var(--header-height) + 2rem) 1rem 2.5rem;
+  }
+
+  .hero--page .hero__title {
+    font-size: clamp(1.9rem, 8vw, 2.8rem);
+    line-height: 1.12;
+  }
+
+  .hero--page .hero__subtitle {
+    max-width: 38ch;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .offers-nav__list {
+    justify-content: flex-start;
+    padding-inline: 0.25rem;
+  }
+
+  .offers-nav__link {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.84rem;
+  }
+
+  .offer-cat {
+    padding-block: 3rem;
+  }
+
+  .offer-cat__header {
+    margin-bottom: 1.5rem;
+  }
+
+  .offer-cat .section__title {
+    font-size: clamp(1.7rem, 7vw, 2.25rem);
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  .offer-cat__intro {
+    max-width: 42ch;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .offer-carousel__viewport {
+    border-radius: 14px;
+  }
+
+  .offer-slide__media {
+    height: clamp(210px, 65vw, 300px);
+  }
+
+  .offer-slide__body {
+    gap: 0.8rem;
+    padding: 1.25rem;
+  }
+
+  .offer-slide__title {
+    font-size: clamp(1.45rem, 6vw, 1.8rem);
+  }
+
+  .offer-slide__price {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    white-space: normal;
+  }
+
+  .offer-slide__text {
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  .offer-slide__body .btn {
+    width: 100%;
+    margin-top: 0.35rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .offer-carousel__controls {
+    gap: 0.55rem;
+    margin-top: 1.1rem;
+  }
+
+  .offer-arrow {
+    width: 42px;
+    height: 42px;
+  }
+
+  .offer-pills {
+    gap: 0.35rem;
+  }
+
+  .offer-pill {
+    min-height: 38px;
+    padding: 0.45em 0.8em;
+    font-size: 0.8rem;
+  }
+
+  .offer-cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .offer-cta__actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .header__inner {
+    padding-inline: 0.75rem;
+  }
+
+  .logo img {
+    max-width: 145px;
+  }
+
+  .hero--page .hero__title {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    padding-inline: 0.9rem;
+  }
+
+  .offer-slide__media {
+    height: 205px;
+  }
+
+  .offer-slide__body {
+    padding: 1rem;
+  }
+
+  .offer-carousel__controls {
+    gap: 0.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offers-nav__list {
+    scroll-behavior: auto;
+  }
+}
