@@ -558,6 +558,11 @@ input:focus-visible {
   margin-top: var(--space-sm);
 }
 
+.hero__btn.btn--gold {
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+
 /* Hero de page (plus court que celui de l'accueil) */
 .hero--page {
   min-height: 70svh;
