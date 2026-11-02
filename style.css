@@ -513,7 +513,6 @@ input:focus-visible {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 780px;
   padding-inline: var(--space-md);
   color: var(--color-white);
 }
@@ -3794,7 +3793,7 @@ body {
 }
 
 .hero--page .hero__content {
-  width: min(100%, 780px);
+  width: 100%;
   margin-inline: auto;
 }
 
