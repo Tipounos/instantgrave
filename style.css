@@ -1187,6 +1187,7 @@ input:focus-visible {
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s;
+  width: auto;
 }
 
 .image-item:hover {
@@ -1194,7 +1195,6 @@ input:focus-visible {
 }
 
 .image-item img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
